@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="helpdesk.css">
+    <title>Helpdesk</title>
+</head>
+<body>
+
+    <header>
+        <h1>Helpdesk</h1>
+    </header>
+    <nav>
+        <div>
+            <a href="movies.html">Movies</a>
+            <a href="event.html">Events</a>
+        </div>
+        <div>
+            <a href="helpdesk.html">Helpdesk</a>
+            <a href="login.html">Sign Out</a>
+        </div>
+    </nav>
+
+    <!-- nav bar ends -->
+    <section class="container">
+        <div class="ticket-form">
+            <h2>Explain Your Query!</h2>
+            <form method="post">
+                <label for="issue">Issue:</label>
+                <select id="issue" name="issue" required>
+                    <option value="booking">Booking Issue</option>
+                    <option value="payment">Payment Issue</option>
+                    <option value="cancellation">Cancellation Issue</option>
+                    <option value="talk to person">Talk! To a Technical Person</option>
+                    <!-- option of the drop down menu -->
+                </select>
+
+                <label for="description">Description:</label>
+                <textarea id="description" name="description" placeholder="write your query here!" rows="4" required></textarea>
+
+                <button type="submit">Submit Ticket</button>
+            </form>
+        </div>
+
+        <div class="faq">
+            <h2>Frequently Asked Questions</h2>
+            <ul>
+                <li><strong>Q:</strong> How can I modify my booking?</li>
+                <li><strong>Q:</strong> What payment methods are accepted?</li>
+                <li><strong>Q:</strong> How do I cancel my reservation?</li>
+                <!-- Add more FAQs as needed -->
+            </ul>
+        </div>
+    </section>
+
+    <footer>
+        <p>Contact us at www.MovieMagic.com</p>
+    </footer>
+
+</body>
+</html>

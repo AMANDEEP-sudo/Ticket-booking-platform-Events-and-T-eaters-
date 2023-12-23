@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="login.css">
+    <title>Login Page</title>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <img src="https://www.logomoose.com/wp-content/uploads/2015/10/logomoose_ticketvista.jpg" alt="Ticket Vista Logo" width="50" height="50">
+                <h1>Ticket Vista</h1>
+            </div>
+        </div>
+    </header>
+    <nav>
+        <div>
+            
+        </div>
+        <div>
+            <a href="helpdesk.html">Helpdesk</a>
+            <a href="register.html">Register</a>
+        </div>
+    </nav>
+    <div class="login-container">
+        <form id="loginForm" method="post">
+            <h2>Login</h2>
+
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+
+            <label for="targetPage">Movies or Events:</label>
+                <select id="targetPage" name="targetPage" required>
+                    <option value="" disabled selected>Select Movies or Events</option>
+                    <option value="event.html">Events</option>
+                    <option value="movies.html">Movies</option>
+                </select>
+                
+                <br><br>
+                <button type="button" onclick="submitForm()">Login</button>
+        </form>
+    </div>
+    <footer>
+        <p>&copy; Ticket Vista 2023</p>
+    </footer>
+
+    <script>
+        function submitForm() {
+            var form = document.getElementById("loginForm");
+            var selectedPage = form.elements["targetPage"].value;
+            
+            // Check if a target page is selected
+            if (selectedPage) {
+                form.action = selectedPage;
+                form.submit();
+            } else {
+                alert("Please select a target page.");
+            }
+        }
+    </script>
+</body>
+</html>

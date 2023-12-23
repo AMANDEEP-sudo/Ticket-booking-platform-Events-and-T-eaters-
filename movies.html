@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Selection</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            margin: 0; /* Remove default margin */
+            font-family: Arial, sans-serif;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            padding: 15px;
+            text-align: center;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            background-color: #555;
+            padding: 10px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 10px;
+            margin: 0 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        nav a:hover {
+            background-color: #777;
+        }
+
+        .movies {
+            display: flex;
+            gap: 20px;
+            overflow-x: auto;
+            white-space: nowrap;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .movie {
+            flex: 0 0 300px;
+            text-align: center;
+        }
+
+        .movie p {
+            white-space: normal;
+            overflow: hidden;
+        }
+
+        .booking {
+            padding: 20px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        button {
+            margin-top: 10px;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Movie Magic</h1>
+        <h2 style="color:white">Your Gateway to Cinematic Bliss</h2>
+    </header>
+
+    <nav>
+        <div>
+            <a href="movies.html">Movies</a>
+            <a href="event.html">Events</a>
+        </div>
+        <div>
+            <a href="helpdesk.html">Helpdesk</a>
+            <a href="login.html">Sign Out</a>
+        </div>
+    </nav>
+    <main>
+        <h2>Now Showing</h2>
+        <section class="movies">
+            <div class="movie" onclick="selectMovie('movie1')">
+                <img class="movie-poster" src="https://m.media-amazon.com/images/M/MV5BNTk4ZjM1OWMtYjc3Ni00NzFhLTkwZGEtZWZiYjFhZTk0YjZhXkEyXkFqcGdeQXVyNTkzNDQ4ODc@._V1_.jpg" alt="Movie 1 Poster" width="300" height="450">
+                <h3>Tiger 3</h3>
+                <p>Join us for an unforgettable cinematic experience with Tiger 3. A thrilling journey filled with suspense, action, and heartwarming moments awaits you.<br><br></p>
+                <a href="#" class="book-button">Book Tickets</a>
+            </div>
+
+            <div class="movie" onclick="selectMovie('movie2')">
+                <img class="movie-poster" src="https://rukminim2.flixcart.com/image/850/1000/jst930w0/poster/n/v/d/medium-captain-marvel-9-captain-marvel-jumbo-poster-for-room-original-imafdj876zpk4hfp.jpeg?q=20" alt="Movie 2 Poster" width="300" height="450">
+                <h3>The Marvels</h3>
+                <p>Embark on a magical adventure with The Marvels. This family-friendly film is packed with laughter, enchanting characters, and a heartwarming story that will leave you smiling.</p>
+                <a href="#" class="book-button">Book Tickets</a>
+            </div>
+
+            <div class="movie" onclick="selectMovie('movie3')">
+                <img class="movie-poster" src="https://m.media-amazon.com/images/M/MV5BYTA1NGJiOTItOTJjOC00ZjQwLWE1NTAtYzQwMWNhZjY0YThkXkEyXkFqcGdeQXVyMTUzMTg2ODkz._V1_.jpg" alt="Movie 3 Poster" width="300" height="450">
+                <h3>Napoleon</h3>
+                <p>Experience the intensity and drama of Movie 3. An emotional rollercoaster that will keep you on the edge of your seat from start to finish.<br><br></p>
+                <a href="#" class="book-button">Book Tickets</a>
+            </div>
+        </section>
+
+        <h2>Movie Booking</h2>
+        <section class="booking">
+            <form action="#">
+                <label for="movie-name">Movie Name:</label>
+                <select id="movie-name" name="movie-name">
+                    <option value="movie1">Tiger 3</option>
+                    <option value="movie2">The Marvels</option>
+                    <option value="movie3">Napoleon</option>
+                </select>
+
+                <label for="date">Date:</label>
+                <input type="date" id="date" name="date" required>
+
+                <label for="time">Time:</label>
+                <select id="time" name="time">
+                    <option value="3pm">3:00 PM</option>
+                    <option value="6pm">6:00 PM</option>
+                    <option value="9pm">9:00 PM</option>
+                </select>
+
+                <label for="quantity">No. of Tickets:</label>
+                <input type="number" id="quantity" name="quantity" min="1" required>
+
+                <button type="submit">Book Tickets</button><br>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; Movie Magic 2023</p>
+    </footer>
+
+    <script>
+        function selectMovie(movie) {
+            document.getElementById('movie-name').value = movie;
+        }
+    </script>
+</body>
+</html>

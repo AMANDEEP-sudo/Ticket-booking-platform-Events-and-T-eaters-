@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Selection</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            margin: 0; /* Remove default margin */
+            font-family: Arial, sans-serif;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            padding: 15px;
+            text-align: center;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            background-color: #555;
+            padding: 10px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 10px;
+            margin: 0 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        nav a:hover {
+            background-color: #777;
+        }
+
+        .movies {
+            display: flex;
+            gap: 20px;
+            overflow-x: auto;
+            white-space: nowrap;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .movie {
+            flex: 0 0 300px;
+            text-align: center;
+        }
+
+        .movie p {
+            white-space: normal;
+            overflow: hidden;
+        }
+
+        .booking {
+            padding: 20px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        button {
+            margin-top: 10px;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Ticket Vista</h1>
+        <h2 style="color: white;">Your Gateway to Events and Entertainment</h2>
+    </header>
+
+    <nav>
+        <div>
+            <a href="movies.html">Movies</a>
+            <a href="event.html">Events</a>
+        </div>
+        <div>
+            <a href="helpdesk.html">Helpdesk</a>
+            <a href="login.html">Sign Out</a>
+        </div>
+    </nav>
+    <main>
+        <h2>Upcoming Events</h2>
+        <section class="events">
+            <div class="event" onclick="selectEvent('event1')">
+                <img class="event_title" src="https://img.freepik.com/premium-photo/harmony-motion-vibrant-celebration_902820-18991.jpg" alt="Harmony in Motion event image" width="626" height="626">
+                <h3>Harmony in Motion</h3>
+                <p>Immerse yourself in an evening of musical enchantment as renowned artists from various genres come together for a unique collaboration. "Harmony in Motion" promises to be a soul-stirring experience, blending classical, jazz, and contemporary music into a seamless symphony of emotions.</p>
+                <a href="#" class="book-button">Book Tickets</a>
+            </div>
+
+            <div class="event" onclick="selectEvent('event2')">
+                <img class="event_title" src="laugh_fest.png" width="626" height="626">
+                <h3>Laughter Fest 2023</h3>
+                <p>Get ready for a night filled with unstoppable laughter at "Laughter Fest 2023"! A stellar lineup of stand-up comedians will leave you in stitches with their hilarious anecdotes and sharp wit.<br><br> Join us for a side-splitting evening that guarantees non-stop laughter and a fantastic time with friends.</p>
+                <a href="#" class="book-button">Book Tickets</a>
+            </div>
+
+            <div class="event" onclick="selectEvent('event3')">
+                <img class="event_title" src="https://i.ytimg.com/vi/f_FWbEBwER4/sddefault.jpg" alt="Spectra: A Visual Extravaganza event image" width="626" height="626">
+                <h3>Spectra: A Visual Extravaganza</h3>
+                <p>"Spectra" invites you to witness a mesmerizing visual spectacle that transcends the boundaries of art and technology. Immerse yourself in a world of light, color, and imagination as cutting-edge visuals, and interactive installations come to life. This immersive experience promises to ignite your senses and redefine the way you perceive art.</p>
+                <a href="#" class="book-button">Book Tickets</a>
+            </div>
+        </section>
+
+        <h2>Ticket Booking</h2>
+        <section class="booking">
+            <form action="#">
+                <label for="event-name">Event Name:</label>
+                <select id="event-name" name="event-name">
+                    <option value="event1">Harmony in Motion</option>
+                    <option value="event2">Laughter Fest 2023</option>
+                    <option value="event3">Spectra: A Visual Extravaganza</option>
+                </select>
+
+                <label for="date">Date:</label>
+                <input type="date" id="date" name="date" required>
+
+                <label for="time">Time:</label>
+                <select id="time" name="time">
+                    <option value="7pm">7:00 PM</option>
+                    <option value="8pm">8:00 PM</option>
+                    <option value="9pm">9:00 PM</option>
+                </select>
+
+                <label for="quantity">No. of Tickets:</label>
+                <input type="number" id="quantity" name="quantity" min="1" required>
+
+                <button type="submit">Book Tickets</button><br>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; Ticket Vista 2023</p>
+    </footer>
+
+    <script>
+        function selectEvent(event) {
+            document.getElementById('event-name').value = event;
+        }
+    </script>
+</body>
+</html>
